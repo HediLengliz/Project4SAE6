@@ -1,0 +1,30 @@
+<h1>{{title}}</h1>
+<button class="btn btn-outline-success" routerLink="/appartments/add">Add Appartement</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Appartement Number</th>
+    <th>Floor Number</th>
+    <th>Surface</th>
+    <th>Terrace</th>
+    <th>Terrace Surface</th>
+    <th>category</th>
+    <th>ResidenceId</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let a of appartments">
+    <td>{{a.id}}</td>
+    <td>{{a.apartNum}}</td>
+    <td>{{a.floorNum}}</td>
+    <td>{{a.surface}}</td>
+    <td>{{a.terrace}}</td>
+    <td>{{a.surfaceterrace}}</td>
+    <td>{{a.category}}</td>
+    <td>{{a.ResidenceId}}</td>
+  </tr>
+  </tbody>
+</table>
+

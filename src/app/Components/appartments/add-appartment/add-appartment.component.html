@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    Add New Appartment
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <form [formGroup]="appartment" (ngSubmit)="addAppartment()">
+        <div class="mb-3">
+          <label for="apartNum" class="form-label">Appartment Number</label>
+          <input type="text" class="form-control" id="apartNum" formControlName="apartNum">
+        </div>
+        <div class="alert alert-danger" *ngIf="apartNum!.invalid && (apartNum!.touched || apartNum!.dirty)">
+          <div *ngIf="apartNum!.hasError('required')"> Appartment Number is required! </div>
+          <div *ngIf="apartNum!.hasError('minlength')"> Appartment Number must have at least 1 character! </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="floorNum" class="form-label">Floor Number</label>
+          <input type="text" class="form-control" id="floorNum" formControlName="floorNum">
+        </div>
+        <div class="alert alert-danger" *ngIf="floorNum!.invalid && (floorNum!.touched || floorNum!.dirty)">
+          <div *ngIf="floorNum!.hasError('required')"> Floor Number is required! </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="surface" class="form-label">Surface</label>
+          <input type="text" class="form-control" id="surface" formControlName="surface">
+        </div>
+        <div class="alert alert-danger" *ngIf="surface!.invalid && (surface!.touched || surface!.dirty)">
+          <div *ngIf="surface!.hasError('required')"> Surface is required! </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="terrace" class="form-label">Terrace</label>
+          <input type="checkbox" class="form-check-input" id="terrace" formControlName="terrace">
+        </div>
+
+        <div class="mb-3">
+          <label for="surfaceterrace" class="form-label">Terrace Surface</label>
+          <input type="text" class="form-control" id="surfaceterrace" formControlName="surfaceterrace">
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <input type="text" class="form-control" id="category" formControlName="category">
+        </div>
+        <div class="alert alert-danger" *ngIf="category!.invalid && (category!.touched || category!.dirty)">
+          <div *ngIf="category!.hasError('required')"> Category is required! </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="ResidenceId" class="form-label">Residence ID</label>
+          <input type="text" class="form-control" id="ResidenceId" formControlName="ResidenceId">
+        </div>
+        <div class="alert alert-danger" *ngIf="ResidenceId!.invalid && (ResidenceId!.touched || ResidenceId!.dirty)">
+          <div *ngIf="ResidenceId!.hasError('required')"> Residence ID is required! </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-warning" [disabled]="appartment.invalid">ADD Appartment</button>
+      </form>
+    </div>
+  </div>
+</div>
